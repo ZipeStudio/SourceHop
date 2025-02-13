@@ -1,16 +1,18 @@
 package me.zipestudio.sourcehop;
 
+import lombok.Getter;
 import me.zipestudio.sourcehop.config.SHConfig;
 import net.fabricmc.api.ModInitializer;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class SourceHop implements ModInitializer {
 	public static final String MOD_ID = "sourcehop";
+	@Getter
+	private static SHConfig config;
 
 	@Override
 	public void onInitialize() {
-		SHConfig.GSON.load();
+		if (SHConfig.GSON.load()) {
+			config = SHConfig.GSON.instance();
+		}
 	}
 }
