@@ -16,10 +16,12 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+@SuppressWarnings("java:S2160") // Mixin class
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin extends Entity {
 
@@ -57,12 +59,10 @@ public abstract class LivingEntityMixin extends Entity {
 	@Shadow
 	public abstract void updateLimbs(boolean flutter);
 
-	@Shadow
-	public abstract void remove(RemovalReason reason);
-
+	@Unique
 	private boolean wasOnGround;
 
-	public LivingEntityMixin(EntityType<?> type, World world) {
+	protected LivingEntityMixin(EntityType<?> type, World world) {
 		super(type, world);
 	}
 
@@ -135,9 +135,7 @@ public abstract class LivingEntityMixin extends Entity {
 				);
 			}
 		}
-		this.wasOnGround = this.
-
-				isOnGround();
+		this.wasOnGround = this.isOnGround();
 
 		if (sI != 0.0F || fI != 0.0F) {
 			Vec3d moveDir = movementInputToVelocity(new Vec3d(sI, 0.0F, fI), 1.0F, this.getYaw());
@@ -171,14 +169,13 @@ public abstract class LivingEntityMixin extends Entity {
 		//
 		double yVel = preVel.y;
 		double gravity = config.getGravity();
-		if (preVel.y <= 0.0D && this.
-
-				hasStatusEffect(StatusEffects.SLOW_FALLING)) {
+		if (preVel.y <= 0.0D && this.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
 			gravity = 0.01D;
 			this.fallDistance = 0.0F;
 		}
-		if (this.hasStatusEffect(StatusEffects.LEVITATION)) {
-			yVel += (0.05D * (this.getStatusEffect(StatusEffects.LEVITATION).getAmplifier() + 1) - preVel.y) * 0.2D;
+		StatusEffectInstance levitation = this.getStatusEffect(StatusEffects.LEVITATION);
+		if (levitation != null) {
+			yVel += (0.05D * (levitation.getAmplifier() + 1) - preVel.y) * 0.2D;
 			this.fallDistance = 0.0F;
 		} else if (this.getWorld().isClient && !this.getWorld().isChunkLoaded(this.getChunkPos().x, this.getChunkPos().z)) {
 			yVel = 0.0D;
@@ -223,8 +220,9 @@ public abstract class LivingEntityMixin extends Entity {
 
 		Vec3d vecFin = this.getVelocity();
 		double yVel = this.getJumpVelocity();
-		if (this.hasStatusEffect(StatusEffects.JUMP_BOOST)) {
-			yVel += 0.1F * (this.getStatusEffect(StatusEffects.JUMP_BOOST).getAmplifier() + 1);
+		StatusEffectInstance jumpBoost = this.getStatusEffect(StatusEffects.JUMP_BOOST);
+		if (jumpBoost != null) {
+			yVel += 0.1F * (jumpBoost.getAmplifier() + 1);
 		}
 
 		this.setVelocity(vecFin.x, yVel, vecFin.z);
@@ -233,6 +231,7 @@ public abstract class LivingEntityMixin extends Entity {
 		ci.cancel();
 	}
 
+	@Unique
 	private static boolean isFlying(PlayerEntity player) {
 		return player != null && player.getAbilities().flying;
 	}
