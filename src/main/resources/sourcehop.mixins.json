@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.zipestudio.sourcehop.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FluidBlockMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

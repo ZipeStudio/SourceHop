@@ -1,0 +1,19 @@
+{
+  "text.autoconfig.sourcehop.title": "SourceHop",
+
+  "text.autoconfig.sourcehop.category.general": "Motion Switches",
+  "text.autoconfig.sourcehop.category.properties": "Properties",
+
+  "text.autoconfig.sourcehop.option.general.enableStrafing": "Enable Strafing",
+  "text.autoconfig.sourcehop.option.general.manualJump": "Manual Jump (Experimental)",
+  "text.autoconfig.sourcehop.option.general.crouchJump": "Enable Crouch-Jumping (Experimental)",
+  "text.autoconfig.sourcehop.option.general.compatibilityMode": "Compatibility Mode",
+  "text.autoconfig.sourcehop.option.general.jesusMode": "Jesus Mode (walking on Water & lava)",
+
+  "text.autoconfig.sourcehop.option.properties.friction": "Friction",
+  "text.autoconfig.sourcehop.option.properties.accelerate": "Acceleration",
+  "text.autoconfig.sourcehop.option.properties.airaccelerate": "Air Acceleration",
+  "text.autoconfig.sourcehop.option.properties.maxairspeed": "Max Air Velocity",
+  "text.autoconfig.sourcehop.option.properties.maxSpeedMul": "Speed Multiplier",
+  "text.autoconfig.sourcehop.option.properties.crouchjumppower": "Crouch Jump Multiplier"
+}

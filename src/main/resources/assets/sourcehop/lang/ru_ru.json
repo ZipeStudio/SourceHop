@@ -1,0 +1,19 @@
+{
+  "text.autoconfig.sourcehop.title": "SourceHop",
+
+  "text.autoconfig.sourcehop.category.general": "Переключатели движения",
+  "text.autoconfig.sourcehop.category.properties": "Параметры",
+
+  "text.autoconfig.sourcehop.option.general.enableStrafing": "Включить стрейфинг",
+  "text.autoconfig.sourcehop.option.general.manualJump": "Ручной прыжок (экспериментально)",
+  "text.autoconfig.sourcehop.option.general.crouchJump": "Включить прыжок с приседанием (экспериментально)",
+  "text.autoconfig.sourcehop.option.general.compatibilityMode": "Режим совместимости",
+  "text.autoconfig.sourcehop.option.general.jesusMode": "Режим иисуса (хождение по воде & лаве)",
+
+  "text.autoconfig.sourcehop.option.properties.friction": "Трение",
+  "text.autoconfig.sourcehop.option.properties.accelerate": "Ускорение",
+  "text.autoconfig.sourcehop.option.properties.airaccelerate": "Ускорение в воздухе",
+  "text.autoconfig.sourcehop.option.properties.maxairspeed": "Максимальная скорость в воздухе",
+  "text.autoconfig.sourcehop.option.properties.maxSpeedMul": "Множитель скорости",
+  "text.autoconfig.sourcehop.option.properties.crouchjumppower": "Множитель прыжка с приседанием"
+}
