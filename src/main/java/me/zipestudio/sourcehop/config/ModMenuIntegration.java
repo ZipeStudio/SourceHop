@@ -7,6 +7,7 @@ import dev.isxander.yacl3.api.Option;
 import dev.isxander.yacl3.api.OptionDescription;
 import dev.isxander.yacl3.api.YetAnotherConfigLib;
 import dev.isxander.yacl3.api.controller.BooleanControllerBuilder;
+import dev.isxander.yacl3.gui.controllers.string.number.DoubleFieldController;
 import dev.isxander.yacl3.gui.controllers.string.number.FloatFieldController;
 import net.minecraft.text.Text;
 
@@ -162,6 +163,16 @@ public class ModMenuIntegration implements ModMenuApi {
                                                         config::getCrouchJumpPower,
                                                         config::setCrouchJumpPower)
                                                 .customController(FloatFieldController::new)
+                                                .build()
+                                )
+                                .option(
+                                        Option.<Double>createBuilder()
+                                                .name(Text.translatable("text.autoconfig.sourcehop.option.properties.gravity"))
+                                                .binding(
+                                                        def.getGravity(),
+                                                        config::getGravity,
+                                                        config::setGravity)
+                                                .customController(DoubleFieldController::new)
                                                 .build()
                                 )
                                 .build()

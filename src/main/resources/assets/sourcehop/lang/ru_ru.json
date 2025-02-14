@@ -15,5 +15,6 @@
   "text.autoconfig.sourcehop.option.properties.airaccelerate": "Ускорение в воздухе",
   "text.autoconfig.sourcehop.option.properties.maxairspeed": "Максимальная скорость в воздухе",
   "text.autoconfig.sourcehop.option.properties.maxSpeedMul": "Множитель скорости",
-  "text.autoconfig.sourcehop.option.properties.crouchjumppower": "Множитель прыжка с приседанием"
+  "text.autoconfig.sourcehop.option.properties.crouchjumppower": "Множитель прыжка с приседанием",
+  "text.autoconfig.sourcehop.option.properties.gravity": "Гравитация"
 }

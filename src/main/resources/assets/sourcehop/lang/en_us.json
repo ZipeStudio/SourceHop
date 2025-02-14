@@ -15,5 +15,6 @@
   "text.autoconfig.sourcehop.option.properties.airaccelerate": "Air Acceleration",
   "text.autoconfig.sourcehop.option.properties.maxairspeed": "Max Air Velocity",
   "text.autoconfig.sourcehop.option.properties.maxSpeedMul": "Speed Multiplier",
-  "text.autoconfig.sourcehop.option.properties.crouchjumppower": "Crouch Jump Multiplier"
+  "text.autoconfig.sourcehop.option.properties.crouchjumppower": "Crouch Jump Multiplier",
+  "text.autoconfig.sourcehop.option.properties.gravity": "Gravity"
 }

@@ -43,5 +43,5 @@ public class SHConfig {
     private float crouchJumpPower = 1.1F; //How much to multiply default game's jump power by.
 
     @SerialEntry
-    public final double gravity = 0.08D;
+    public double gravity = 0.08D;
 }
