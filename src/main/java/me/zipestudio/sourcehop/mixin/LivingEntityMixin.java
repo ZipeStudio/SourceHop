@@ -73,12 +73,12 @@ public abstract class LivingEntityMixin extends Entity {
 			return;
 		}
 
-		SHConfig config = SourceHop.getConfig();
-		if (!config.isEnableStrafing()) {
+		if (this.getType() != EntityType.PLAYER) {
 			return;
 		}
 
-		if (config.isCompatibilityMode() && this.getType() != EntityType.PLAYER) {
+		SHConfig config = SourceHop.getConfig();
+		if (!config.isEnableStrafing()) {
 			return;
 		}
 

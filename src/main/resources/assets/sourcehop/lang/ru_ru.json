@@ -5,16 +5,26 @@
   "text.autoconfig.sourcehop.category.properties": "Параметры",
 
   "text.autoconfig.sourcehop.option.general.enableStrafing": "Включить стрейфинг",
+  "text.autoconfig.sourcehop.option.general.enableStrafing.desc": "Включить стрейфинг, а также баннихоп",
   "text.autoconfig.sourcehop.option.general.manualJump": "Ручной прыжок (экспериментально)",
+  "text.autoconfig.sourcehop.option.general.manualJump.desc": "Отменяет автопрыжок при удержании пробела",
   "text.autoconfig.sourcehop.option.general.crouchJump": "Включить прыжок с приседанием (экспериментально)",
-  "text.autoconfig.sourcehop.option.general.compatibilityMode": "Режим совместимости",
-  "text.autoconfig.sourcehop.option.general.jesusMode": "Режим иисуса (хождение по воде & лаве)",
+  "text.autoconfig.sourcehop.option.general.crouchJump.desc": "Даёт небольшую дополнительную высоту прыжка при приседании",
+  "text.autoconfig.sourcehop.option.general.jesusMode": "Режим иисуса",
+  "text.autoconfig.sourcehop.option.general.jesusMode.desc": "Позволяет стрейфить по воде и лаве",
 
   "text.autoconfig.sourcehop.option.properties.friction": "Трение",
+  "text.autoconfig.sourcehop.option.properties.friction.desc": "Сила трения с поверхностью",
   "text.autoconfig.sourcehop.option.properties.accelerate": "Ускорение",
+  "text.autoconfig.sourcehop.option.properties.accelerate.desc": "Ускорение на земле",
   "text.autoconfig.sourcehop.option.properties.airaccelerate": "Ускорение в воздухе",
+  "text.autoconfig.sourcehop.option.properties.airaccelerate.desc": "Ускорение при движении в воздухе",
   "text.autoconfig.sourcehop.option.properties.maxairspeed": "Максимальная скорость в воздухе",
+  "text.autoconfig.sourcehop.option.properties.maxairspeed.desc": "Максимальная скорость в воздухе без внешнего влияния. Также определяет, насколько быстро вы набираете скорость прыжка",
   "text.autoconfig.sourcehop.option.properties.maxSpeedMul": "Множитель скорости",
+  "text.autoconfig.sourcehop.option.properties.maxSpeedMul.desc": "Во сколько раз умножить стандартную скорость движения",
   "text.autoconfig.sourcehop.option.properties.crouchjumppower": "Множитель прыжка с приседанием",
-  "text.autoconfig.sourcehop.option.properties.gravity": "Гравитация"
+  "text.autoconfig.sourcehop.option.properties.crouchjumppower.desc": "Во сколько раз увеличить силу прыжка при приседании",
+  "text.autoconfig.sourcehop.option.properties.gravity": "Гравитация",
+  "text.autoconfig.sourcehop.option.properties.gravity.desc": "Сила стандартной гравитации в игре"
 }

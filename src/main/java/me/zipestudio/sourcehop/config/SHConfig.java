@@ -23,8 +23,6 @@ public class SHConfig {
     private boolean manualJump = false; // Cancels autojumping while holding down the spacebar.
     @SerialEntry
     private boolean crouchJump = false; // Gives you a little extra jump height when crouching.
-    @SerialEntry
-    private boolean compatibilityMode = true; // Enables movement mechanics only for players.
 
     @SerialEntry
     private boolean jesusMode = false;
