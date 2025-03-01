@@ -4,14 +4,14 @@
   "text.autoconfig.sourcehop.category.general": "Переключатели движения",
   "text.autoconfig.sourcehop.category.properties": "Параметры",
 
-  "text.autoconfig.sourcehop.option.general.enableStrafing": "Включить стрейфинг",
-  "text.autoconfig.sourcehop.option.general.enableStrafing.desc": "Включить стрейфинг, а также баннихоп",
+  "text.autoconfig.sourcehop.option.general.enableStrafing": "Включить бхоп",
+  "text.autoconfig.sourcehop.option.general.enableStrafing.desc": "Включить стрейфинг, а также банихоп",
   "text.autoconfig.sourcehop.option.general.manualJump": "Ручной прыжок (экспериментально)",
   "text.autoconfig.sourcehop.option.general.manualJump.desc": "Отменяет автопрыжок при удержании пробела",
   "text.autoconfig.sourcehop.option.general.crouchJump": "Включить прыжок с приседанием (экспериментально)",
   "text.autoconfig.sourcehop.option.general.crouchJump.desc": "Даёт небольшую дополнительную высоту прыжка при приседании",
   "text.autoconfig.sourcehop.option.general.jesusMode": "Режим иисуса",
-  "text.autoconfig.sourcehop.option.general.jesusMode.desc": "Позволяет стрейфить по воде и лаве",
+  "text.autoconfig.sourcehop.option.general.jesusMode.desc": "Позволяет банихопить по воде и лаве",
 
   "text.autoconfig.sourcehop.option.properties.friction": "Трение",
   "text.autoconfig.sourcehop.option.properties.friction.desc": "Сила трения с поверхностью",

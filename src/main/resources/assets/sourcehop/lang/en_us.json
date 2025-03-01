@@ -4,7 +4,7 @@
   "text.autoconfig.sourcehop.category.general": "Motion Switches",
   "text.autoconfig.sourcehop.category.properties": "Properties",
 
-  "text.autoconfig.sourcehop.option.general.enableStrafing": "Enable Strafing",
+  "text.autoconfig.sourcehop.option.general.enableStrafing": "Enable bhop",
   "text.autoconfig.sourcehop.option.general.enableStrafing.desc": "Enable strafing, hence also bhop",
   "text.autoconfig.sourcehop.option.general.manualJump": "Manual Jump (Experimental)",
   "text.autoconfig.sourcehop.option.general.manualJump.desc": "Cancels autojumping while holding down the spacebar",
