@@ -8,5 +8,9 @@
 
 # 💬 Description
 Client side mod that allows the player to try bhop from the Source engine.
+You can edit the mod settings for yourself using the YACL & modmenu mods.
 
   <img src="https://github.com/user-attachments/assets/c8989f0b-e981-4d3f-a4b9-b9bdc68c9d35" width="500px" alt="mod showcase"/>
+
+![image](https://github.com/user-attachments/assets/1e245db9-886a-4d4a-8baa-095ab07add99)
+![image](https://github.com/user-attachments/assets/853748e2-6d63-490c-8cdc-afd20c698ca8)
