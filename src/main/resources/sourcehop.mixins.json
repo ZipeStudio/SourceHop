@@ -8,9 +8,7 @@
     "LivingEntityMixin",
     "NoFallDamageMixin"
   ],
-  "refmap": "sourcehop-refmap.json",
-  "client": [
-  ],
+  "refmap": "sourcehop.refmap.json",
   "injectors": {
     "defaultRequire": 1
   }
