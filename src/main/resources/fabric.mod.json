@@ -11,7 +11,7 @@
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "LGPL-3.0",
+	"license": "CC-BY-ND 4.0",
 	"icon": "assets/sourcehop/icon.png",
 	"environment": "*",
 	"entrypoints": {
