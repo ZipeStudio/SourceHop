@@ -19,13 +19,25 @@ public class SHConfig {
 
     @SerialEntry
     private boolean enableStrafing = true; // Enable strafing, hence also bunnyhop.
-    @SerialEntry
-    private boolean manualJump = false; // Cancels autojumping while holding down the spacebar.
-    @SerialEntry
-    private boolean crouchJump = false; // Gives you a little extra jump height when crouching.
 
     @SerialEntry
-    private boolean jesusMode = false;
+    private boolean enableManualJump = false; // Cancels autojumping while holding down the spacebar.
+
+    @SerialEntry
+    private boolean enableCrouchJump = false; // Gives you a little extra jump height when crouching.
+
+
+
+    @SerialEntry
+    private boolean enableSpeedometer = false;
+
+    @SerialEntry
+    private boolean enableJesusMode = false;
+
+    @SerialEntry
+    private boolean enableNoFallDamage = false;
+
+
 
     @SerialEntry
     private float friction = 0.5F; //Ground friction.
@@ -41,5 +53,5 @@ public class SHConfig {
     private float crouchJumpPower = 1.1F; //How much to multiply default game's jump power by.
 
     @SerialEntry
-    public double gravity = 0.08D;
+    public float gravity = 0.08F;
 }

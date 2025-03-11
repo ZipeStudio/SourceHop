@@ -6,6 +6,7 @@ import net.fabricmc.api.ModInitializer;
 
 public class SourceHop implements ModInitializer {
 	public static final String MOD_ID = "sourcehop";
+
 	@Getter
 	private static SHConfig config;
 

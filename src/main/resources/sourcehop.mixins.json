@@ -5,7 +5,8 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "FluidBlockMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "NoFallDamageMixin"
   ],
   "refmap": "sourcehop-refmap.json",
   "client": [
