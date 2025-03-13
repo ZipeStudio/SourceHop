@@ -15,7 +15,7 @@
   "text.autoconfig.sourcehop.option.general.enableSpeedometer.desc": "Включает отображение спидометра для отображения текущей скорости.",
   "text.autoconfig.sourcehop.option.general.enableJesusMode": "Режим Иисуса",
   "text.autoconfig.sourcehop.option.general.enableJesusMode.desc": "Позволяет выполнять бхоп по воде и лаве.",
-  "text.autoconfig.sourcehop.option.general.enableNoFallDamage": "Без урона от падений",
+  "text.autoconfig.sourcehop.option.general.enableNoFallDamage": "Без урона от падений §c[Экспериментально]",
   "text.autoconfig.sourcehop.option.general.enableNoFallDamage.desc": "Отключает получение урона при падении.",
 
   "text.autoconfig.sourcehop.option.properties.friction": "Трение",

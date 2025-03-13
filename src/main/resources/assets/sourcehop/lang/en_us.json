@@ -16,7 +16,7 @@
 
   "text.autoconfig.sourcehop.option.general.enableJesusMode": "Jesus Mode",
   "text.autoconfig.sourcehop.option.general.enableJesusMode.desc": "Allows you to bhop on water and lava.",
-  "text.autoconfig.sourcehop.option.general.enableNoFallDamage": "No Fall Damage",
+  "text.autoconfig.sourcehop.option.general.enableNoFallDamage": "No Fall Damage §c[Experimental]",
   "text.autoconfig.sourcehop.option.general.enableNoFallDamage.desc": "Disables fall damage.",
 
   "text.autoconfig.sourcehop.option.properties.friction": "Friction",

@@ -6,7 +6,7 @@
   "mixins": [
     "FluidBlockMixin",
     "LivingEntityMixin",
-    "NoFallDamageMixin"
+    "NoFallPacketMixin"
   ],
   "refmap": "sourcehop.refmap.json",
   "injectors": {
