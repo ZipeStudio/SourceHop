@@ -1,6 +1,10 @@
 {
   "text.autoconfig.sourcehop.title": "SourceHop",
 
+  "text.keybinding.sourcehop.actionbar.toggle": "Включить/Выключить мод",
+  "text.keybinding.sourcehop.actionbar.toggle.true": "§7включён",
+  "text.keybinding.sourcehop.actionbar.toggle.false": "§7выключен",
+
   "text.autoconfig.sourcehop.category.general": "Переключатели движения",
   "text.autoconfig.sourcehop.category.properties": "Параметры",
 
@@ -11,8 +15,8 @@
   "text.autoconfig.sourcehop.option.general.enableCrouchJump": "Включить прыжок с приседанием (экспериментально)",
   "text.autoconfig.sourcehop.option.general.enableCrouchJump.desc": "Добавляет дополнительную высоту прыжка при приседании.",
   "text.autoconfig.sourcehop.option.general.enableSpeedometer": "Включить спидометр",
-  "text.autoconfig.sourcehop.option.general.enableSpeedometer.desc.actionbar": "блоков/сек.",
   "text.autoconfig.sourcehop.option.general.enableSpeedometer.desc": "Включает отображение спидометра для отображения текущей скорости.",
+  "text.autoconfig.sourcehop.option.general.enableSpeedometer.desc.actionbar": "блоков/сек.",
   "text.autoconfig.sourcehop.option.general.enableJesusMode": "Режим Иисуса",
   "text.autoconfig.sourcehop.option.general.enableJesusMode.desc": "Позволяет выполнять бхоп по воде и лаве.",
   "text.autoconfig.sourcehop.option.general.enableNoFallDamage": "Без урона от падений §c[Экспериментально]",

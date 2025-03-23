@@ -1,6 +1,10 @@
 {
   "text.autoconfig.sourcehop.title": "SourceHop",
 
+  "text.keybinding.sourcehop.actionbar.toggle": "Enable/Disable mod",
+  "text.keybinding.sourcehop.actionbar.toggle.true": "§7enabled",
+  "text.keybinding.sourcehop.actionbar.toggle.false": "§7disabled",
+
   "text.autoconfig.sourcehop.category.general": "Motion Switches",
   "text.autoconfig.sourcehop.category.properties": "Properties",
 
@@ -11,8 +15,8 @@
   "text.autoconfig.sourcehop.option.general.enableCrouchJump": "Enable Crouch-Jumping (Experimental)",
   "text.autoconfig.sourcehop.option.general.enableCrouchJump.desc": "Gives a small extra jump height when crouching.",
   "text.autoconfig.sourcehop.option.general.enableSpeedometer": "Enable Speedometer",
-  "text.autoconfig.sourcehop.option.general.enableSpeedometer.desc.actionbar": "blocks/sec",
   "text.autoconfig.sourcehop.option.general.enableSpeedometer.desc": "Enables a speedometer to display current speed.",
+  "text.autoconfig.sourcehop.option.general.enableSpeedometer.desc.actionbar": "blocks/sec",
 
   "text.autoconfig.sourcehop.option.general.enableJesusMode": "Jesus Mode",
   "text.autoconfig.sourcehop.option.general.enableJesusMode.desc": "Allows you to bhop on water and lava.",

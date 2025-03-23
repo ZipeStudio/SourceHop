@@ -9,9 +9,9 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class SHConfig {
+public class SourceHopConfig {
 
-    public static final ConfigClassHandler<SHConfig> GSON = ConfigClassHandler.createBuilder(SHConfig.class)
+    public static final ConfigClassHandler<SourceHopConfig> GSON = ConfigClassHandler.createBuilder(SourceHopConfig.class)
             .serializer(config -> GsonConfigSerializerBuilder.create(config)
                     .setPath(YACLPlatform.getConfigDir().resolve("sourcehop.json"))
                     .build())

@@ -14,7 +14,7 @@ public class ModMenuIntegration implements ModMenuApi {
     }
 
     public static YetAnotherConfigLib shConfig() {
-        return YetAnotherConfigLib.create(SHConfig.GSON, (def, config, builder) -> builder
+        return YetAnotherConfigLib.create(SourceHopConfig.GSON, (def, config, builder) -> builder
                 .title(Text.translatable("text.autoconfig.sourcehop.title"))
                 .category(ConfigCategory.createBuilder()
 

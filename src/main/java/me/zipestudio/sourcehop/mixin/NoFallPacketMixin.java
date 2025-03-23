@@ -1,15 +1,11 @@
 package me.zipestudio.sourcehop.mixin;
 
-import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
-import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
 import me.zipestudio.sourcehop.SourceHop;
-import me.zipestudio.sourcehop.config.SHConfig;
+import me.zipestudio.sourcehop.client.SourceHopClient;
+import me.zipestudio.sourcehop.config.SourceHopConfig;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientCommonNetworkHandler;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.util.math.Vec3d;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,7 +19,8 @@ public abstract class NoFallPacketMixin {
     @Inject(method = "sendMovementPackets", at = @At("HEAD"))
     private void onSendPacket(CallbackInfo ci) {
 
-        if (!SourceHop.getConfig().isEnableNoFallDamage()) {
+        SourceHopConfig config = SourceHopClient.getConfig();
+        if (!config.isEnableStrafing() || !config.isEnableNoFallDamage()) {
             return;
         }
 

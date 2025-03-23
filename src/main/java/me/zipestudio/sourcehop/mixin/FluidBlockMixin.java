@@ -1,7 +1,8 @@
 package me.zipestudio.sourcehop.mixin;
 
 import me.zipestudio.sourcehop.SourceHop;
-import me.zipestudio.sourcehop.config.SHConfig;
+import me.zipestudio.sourcehop.client.SourceHopClient;
+import me.zipestudio.sourcehop.config.SourceHopConfig;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -27,7 +28,8 @@ public abstract class FluidBlockMixin {
 	@Inject(method = "getCollisionShape", at = @At("RETURN"), cancellable = true)
 	private void injectGetCollisionShape(BlockState state, CollisionView world, BlockPos pos, CallbackInfoReturnable<VoxelShape> cir) {
 
-		if (!SourceHop.getConfig().isEnableJesusMode()) {
+		SourceHopConfig config = SourceHopClient.getConfig();
+		if (!config.isEnableStrafing() || !config.isEnableJesusMode()) {
 			return;
 		}
 

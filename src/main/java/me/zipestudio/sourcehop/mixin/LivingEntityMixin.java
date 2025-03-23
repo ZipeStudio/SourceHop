@@ -1,7 +1,8 @@
 package me.zipestudio.sourcehop.mixin;
 
 import me.zipestudio.sourcehop.SourceHop;
-import me.zipestudio.sourcehop.config.SHConfig;
+import me.zipestudio.sourcehop.client.SourceHopClient;
+import me.zipestudio.sourcehop.config.SourceHopConfig;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.entity.*;
@@ -85,7 +86,7 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "travel", at = @At("HEAD"), cancellable = true)
     public void travel(Vec3d movementInput, CallbackInfo ci) {
 
-        SHConfig config = SourceHop.getConfig();
+        SourceHopConfig config = SourceHopClient.getConfig();
         if (!config.isEnableStrafing()) {
             return;
         }
@@ -198,9 +199,8 @@ public abstract class LivingEntityMixin extends Entity {
         }
 
         this.setVelocity(preVel.x, yVel, preVel.z);
-
         // Speedometer
-        if (SourceHop.getConfig().isEnableSpeedometer()) {
+        if (config.isEnableSpeedometer()) {
             double rawSpeed = Math.sqrt(preVel.x * preVel.x + preVel.z * preVel.z) * 19.5;
 
             if (this.isTouchingWater() || this.isInLava() || this.hasVehicle() || isFlying((PlayerEntity) self)) {
@@ -243,7 +243,7 @@ public abstract class LivingEntityMixin extends Entity {
             return;
         }
 
-        SHConfig config = SourceHop.getConfig();
+        SourceHopConfig config = SourceHopClient.getConfig();
         if (this.getType() == EntityType.PLAYER) {
             if (config.isEnableManualJump() && this.getWorld().isClient) {
                 KeyBinding.setKeyPressed(InputUtil.fromTranslationKey("key.keyboard.space"), false);
