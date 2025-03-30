@@ -5,7 +5,7 @@ import me.zipestudio.sourcehop.config.SourceHopConfig;
 import me.zipestudio.sourcehop.keybinding.SourceHopKeybinding;
 import net.fabricmc.api.ClientModInitializer;
 
-public class SourceHopClient implements ClientModInitializer {
+public class SHClient implements ClientModInitializer {
 
     @Getter
     private static SourceHopConfig config;

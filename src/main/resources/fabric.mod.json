@@ -1,42 +1,40 @@
 {
-	"schemaVersion": 1,
-	"id": "sourcehop",
-	"version": "${version}",
-	"name": "SourceHop",
-	"description": "SourceBhop in Minecraft",
-	"authors": [
-		"ZipeStudio"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "CC-BY-ND 4.0",
-	"icon": "assets/sourcehop/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"client": [
-			"me.zipestudio.sourcehop.client.SourceHopClient"
-		],
-		"main": [
-			"me.zipestudio.sourcehop.SourceHop"
-		],
-		"modmenu": [
-			"me.zipestudio.sourcehop.config.ModMenuIntegration"
-		]
-	},
-	"mixins": [
-		"sourcehop.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=${loader_version}",
-		"minecraft": ">=${minecraft_version}",
-		"java": ">=21",
-		"fabric-api": "*",
-		"modmenu": ">=${modmenu_version}",
-		"yet_another_config_lib_v3": ">=${yacl_version}"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "${mod_name}",
+  "description": "${mod_description}",
+  "authors": [
+    "${mod_authors}"
+  ],
+  "contact": {
+    "discord": "https://discord.com/users/339471364312530945",
+    "telegram": "https://t.me/zipeleaf",
+    "minecraft_server": "https://discord.gg/ZsR6XuTkTX",
+    "discord_team": "https://discord.gg/XmGF7rkkuY"
+  },
+  "license": "${mod_license}",
+  "icon": "assets/icon/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.zipestudio.sourcehop.SHServer"
+    ],
+    "client": [
+      "me.zipestudio.sourcehop.client.SHClient"
+    ],
+    "modmenu": [
+      "me.zipestudio.sourcehop.config.ModMenuIntegration"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${fabric_loader}",
+    "minecraft": ">=${minecraft}",
+    "java": ">=${java}",
+    "${fabric_api_id}": "*"
+  },
+  "accessWidener": "aws/${minecraft}.accesswidener",
+  "mixins": [
+    "${mod_id}.mixins.json"
+  ]
 }

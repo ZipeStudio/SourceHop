@@ -1,15 +1,16 @@
 {
-  "required": true,
-  "minVersion": "0.8",
-  "package": "me.zipestudio.sourcehop.mixin",
-  "compatibilityLevel": "JAVA_21",
-  "mixins": [
-    "FluidBlockMixin",
-    "LivingEntityMixin",
-    "NoFallPacketMixin"
-  ],
-  "refmap": "sourcehop.refmap.json",
-  "injectors": {
-    "defaultRequire": 1
-  }
+    "required": true,
+    "package": "me.zipestudio.sourcehop.mixin",
+    "refmap": "${mod_id}.refmap.json",
+    "compatibilityLevel": "JAVA_${java}",
+    "mixins": [
+    ],
+    "client": [
+        "FluidBlockMixin",
+        "LivingEntityMixin",
+        "NoFallPacketMixin"
+    ],
+    "injectors": {
+        "defaultRequire": 1
+    }
 }

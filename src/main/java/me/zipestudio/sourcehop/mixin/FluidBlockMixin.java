@@ -1,12 +1,12 @@
 package me.zipestudio.sourcehop.mixin;
 
-import me.zipestudio.sourcehop.SourceHop;
-import me.zipestudio.sourcehop.client.SourceHopClient;
+import me.zipestudio.sourcehop.client.SHClient;
 import me.zipestudio.sourcehop.config.SourceHopConfig;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.CollisionView;
 import org.jetbrains.annotations.Nullable;
@@ -28,7 +28,7 @@ public abstract class FluidBlockMixin {
 	@Inject(method = "getCollisionShape", at = @At("RETURN"), cancellable = true)
 	private void injectGetCollisionShape(BlockState state, CollisionView world, BlockPos pos, CallbackInfoReturnable<VoxelShape> cir) {
 
-		SourceHopConfig config = SourceHopClient.getConfig();
+		SourceHopConfig config = SHClient.getConfig();
 		if (!config.isEnableStrafing() || !config.isEnableJesusMode()) {
 			return;
 		}
@@ -41,7 +41,7 @@ public abstract class FluidBlockMixin {
 			return;
 		}
 
-		if (state.getFluidState().isEmpty()) {
+		if (state.getFluidState().isEmpty() && !(state.getBlock() instanceof PowderSnowBlock)) {
 			return;
 		}
 

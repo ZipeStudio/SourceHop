@@ -28,9 +28,11 @@ bin/
 
 *.DS_Store
 
-# fabric
+# mossy
 
-run/
+runs/
+libs/
+personal/
 
 # java
 

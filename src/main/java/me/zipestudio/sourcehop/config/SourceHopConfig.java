@@ -53,5 +53,5 @@ public class SourceHopConfig {
     private float crouchJumpPower = 1.1F; //How much to multiply default game's jump power by.
 
     @SerialEntry
-    public float gravity = 0.08F;
+    private float gravity = 0.08F;
 }

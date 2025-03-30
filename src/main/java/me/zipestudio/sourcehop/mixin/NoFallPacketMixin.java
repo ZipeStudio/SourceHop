@@ -1,7 +1,6 @@
 package me.zipestudio.sourcehop.mixin;
 
-import me.zipestudio.sourcehop.SourceHop;
-import me.zipestudio.sourcehop.client.SourceHopClient;
+import me.zipestudio.sourcehop.client.SHClient;
 import me.zipestudio.sourcehop.config.SourceHopConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
@@ -19,7 +18,7 @@ public abstract class NoFallPacketMixin {
     @Inject(method = "sendMovementPackets", at = @At("HEAD"))
     private void onSendPacket(CallbackInfo ci) {
 
-        SourceHopConfig config = SourceHopClient.getConfig();
+        SourceHopConfig config = SHClient.getConfig();
         if (!config.isEnableStrafing() || !config.isEnableNoFallDamage()) {
             return;
         }
@@ -35,6 +34,11 @@ public abstract class NoFallPacketMixin {
             player.setVelocity(velocity.x, -2.999, velocity.z);
         }
 
+        //? if >=1.21 {
         networkHandler.sendPacket(new PlayerMoveC2SPacket.OnGroundOnly(true, player.horizontalCollision));
+        //?} else {
+        /*networkHandler.sendPacket(new PlayerMoveC2SPacket.OnGroundOnly(true));
+        *///?}
+
     }
 }

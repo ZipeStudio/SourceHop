@@ -1,7 +1,6 @@
 package me.zipestudio.sourcehop.mixin;
 
-import me.zipestudio.sourcehop.SourceHop;
-import me.zipestudio.sourcehop.client.SourceHopClient;
+import me.zipestudio.sourcehop.client.SHClient;
 import me.zipestudio.sourcehop.config.SourceHopConfig;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
@@ -31,13 +30,6 @@ public abstract class LivingEntityMixin extends Entity {
     protected abstract float getJumpVelocity();
 
     @Shadow
-    public abstract boolean hasStatusEffect(RegistryEntry<StatusEffect> effect);
-
-    @Shadow
-    @Nullable
-    public abstract StatusEffectInstance getStatusEffect(RegistryEntry<StatusEffect> effect);
-
-    @Shadow
     public float sidewaysSpeed;
 
     @Shadow
@@ -64,9 +56,20 @@ public abstract class LivingEntityMixin extends Entity {
     @Shadow
     public abstract void remove(RemovalReason reason);
 
+    //? if >=1.20.5 {
+    @Shadow
+    public abstract boolean hasStatusEffect(RegistryEntry<StatusEffect> effect);
+
+    @Shadow
+    @Nullable
+    public abstract StatusEffectInstance getStatusEffect(RegistryEntry<StatusEffect> effect);
+    //?} else {
+    /*@Shadow public abstract boolean hasStatusEffect(StatusEffect par1);
+    @Shadow public abstract StatusEffectInstance getStatusEffect(StatusEffect par1);
+    *///?}
+
     @Unique
     private boolean wasOnGround;
-
 
     // Speedometer
     @Unique
@@ -86,7 +89,7 @@ public abstract class LivingEntityMixin extends Entity {
     @Inject(method = "travel", at = @At("HEAD"), cancellable = true)
     public void travel(Vec3d movementInput, CallbackInfo ci) {
 
-        SourceHopConfig config = SourceHopClient.getConfig();
+        SourceHopConfig config = SHClient.getConfig();
         if (!config.isEnableStrafing()) {
             return;
         }
@@ -183,12 +186,26 @@ public abstract class LivingEntityMixin extends Entity {
         //
         double yVel = preVel.y;
         float gravity = config.getGravity();
-        if (preVel.y <= 0.0D && this.hasStatusEffect(StatusEffects.SLOW_FALLING)) {
+
+        boolean dY;
+        //? if >=1.20.5 {
+        dY = preVel.y <= 0.0D && this.hasStatusEffect(StatusEffects.SLOW_FALLING);
+        //?} else {
+        /*dY = preVel.y <= 0.0D && this.hasStatusEffect(StatusEffects.SLOW_FALLING);
+         *///?}
+
+        if (dY) {
             gravity = 0.01F;
             this.fallDistance = 0.0F;
         }
 
-        StatusEffectInstance levitation = this.getStatusEffect(StatusEffects.LEVITATION);
+        StatusEffectInstance levitation;
+        //? if >=1.20.5 {
+        levitation = this.getStatusEffect(StatusEffects.LEVITATION);
+        //?} else {
+        /*levitation = this.getStatusEffect(StatusEffects.LEVITATION);
+         *///?}
+
         if (levitation != null) {
             yVel += (0.05D * (levitation.getAmplifier() + 1) - preVel.y) * 0.2D;
             this.fallDistance = 0.0F;
@@ -216,7 +233,7 @@ public abstract class LivingEntityMixin extends Entity {
                 String speedColor = (smoothedSpeed < prevSpeed) ? "§4↓" : "§2↑";
 
                 Text speedText = Text.literal(String.format(speedColor + "%.02f §r", smoothedSpeed))
-                        .append(Text.translatable("text.autoconfig.sourcehop.option.general.enableSpeedometer.desc.actionbar"));
+                        .append(Text.translatable("sourcehop.text.option.general.enableSpeedometer.desc.actionbar"));
 
                 ((PlayerEntity) self).sendMessage(speedText, true);
             } else if (this.speedWasPrinted) {
@@ -243,7 +260,7 @@ public abstract class LivingEntityMixin extends Entity {
             return;
         }
 
-        SourceHopConfig config = SourceHopClient.getConfig();
+        SourceHopConfig config = SHClient.getConfig();
         if (this.getType() == EntityType.PLAYER) {
             if (config.isEnableManualJump() && this.getWorld().isClient) {
                 KeyBinding.setKeyPressed(InputUtil.fromTranslationKey("key.keyboard.space"), false);

@@ -1,22 +1,21 @@
 package me.zipestudio.sourcehop.keybinding;
 
-import me.zipestudio.sourcehop.SourceHop;
-import me.zipestudio.sourcehop.client.SourceHopClient;
+import me.zipestudio.sourcehop.SHServer;
+import me.zipestudio.sourcehop.client.SHClient;
 import me.zipestudio.sourcehop.config.SourceHopConfig;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
 import net.minecraft.text.Text;
-import net.minecraft.util.Language;
 import org.lwjgl.glfw.GLFW;
 
 public class SourceHopKeybinding {
 
     public static final KeyBinding SH_TOGGLE_KEYBINDING = new KeyBinding(
-            "text.keybinding.sourcehop.actionbar.toggle",
+            "sourcehop.text.keybinding.modToggle",
             InputUtil.Type.KEYSYM, GLFW.GLFW_KEY_H,
-            "text.autoconfig.sourcehop.title"
+            SHServer.MOD_NAME
     );
 
     public static void register() {
@@ -29,15 +28,15 @@ public class SourceHopKeybinding {
                     return;
                 }
 
-                SourceHopConfig clientConfig = SourceHopClient.getConfig();
+                SourceHopConfig clientConfig = SHClient.getConfig();
 
                 boolean toggle = !clientConfig.isEnableStrafing();
                 clientConfig.setEnableStrafing(toggle);
 
                 client.player.sendMessage(
-                        Text.translatable("text.autoconfig.sourcehop.title")
+                        Text.translatable(SHServer.MOD_NAME)
                                 .append(" ")
-                                .append(Text.translatable("text.keybinding.sourcehop.actionbar.toggle." + toggle))
+                                .append(Text.translatable("sourcehop.text.keybinding.modToggle." + toggle))
                         ,
                         true
                 );

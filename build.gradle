@@ -1,105 +1,39 @@
 plugins {
-    id 'fabric-loom' version '1.8-SNAPSHOT'
-    id 'maven-publish'
+	id("net.lopymine.mossy-plugin")
 }
 
-version = project.mod_version
-group = project.maven_group
-
-base {
-    archivesName = project.archives_base_name
+stonecutter {
+	swap("mod_version", "\"${findProperty("data.mod_version")}\";")
+	swap("mod_authors", "\"${findProperty("data.mod_authors")}\";")
 }
 
-loom {
-    mixin {
-        defaultRefmapName.set("sourcehop.refmap.json")
-    }
+mossyDependencies {
+	minecraft = stonecutter.current.version.toString()
+	mappings = prop("build.yarn")
+	lombok = prop("base.lombok_version")
+	fabricApi = prop("build.fabric_api")
+	fabricLoader = prop("build.fabric_loader")
+
+	additional {
+	    // - By default, every additional project dependency ("dep.modId" from gradle.properties) will use
+	    // - Modrinth Maven and "modImplementation" configuration name
+	    // - If you want to override mod configuration name, you can do this:
+
+		//override("modCompileOnly", "just_mod_id")
+
+		// - It will do this:
+		// - modImplementation("maven.modrinth:modId:version") -> modCompileOnly("maven.modrinth:modId:version")
+
+	    // - Or if you want to disable it and handle by yourself, just disable it auto handling:
+
+		//disable("just_mod_id")
+	}
 }
 
-repositories {
-    // Add repositories to retrieve artifacts from in here.
-    // You should only use this when depending on other mods because
-    // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
-    // See https://docs.gradle.org/current/userguide/declaring_repositories.html
-    // for more information about repositories.
-
-    mavenCentral()
-
-    maven {
-        name = "Terraformers"
-        url = "https://maven.terraformersmc.com/"
-    }
-
-    maven {
-        name 'Xander Maven'
-        url 'https://maven.isxander.dev/releases'
-    }
-
+mossyResources {
+	//expandFiles = ["custom", "file", "patterns", "here"]
 }
 
-dependencies {
-    compileOnly 'org.projectlombok:lombok:1.18.36'
-    annotationProcessor 'org.projectlombok:lombok:1.18.36'
-
-    minecraft "com.mojang:minecraft:${project.minecraft_version}"
-    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
-    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
-    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-    modImplementation("com.terraformersmc:modmenu:${project.modmenu_version}")
-    modImplementation "dev.isxander:yet-another-config-lib:${project.yacl_version}"
-}
-
-processResources {
-    inputs.property "version", project.version
-    inputs.property "minecraft_version", project.minecraft_version
-    inputs.property "loader_version", project.loader_version
-    inputs.property "modmenu_version", project.modmenu_version
-    inputs.property "yacl_version", project.yacl_version
-
-    filesMatching("fabric.mod.json") {
-        expand "version": project.version,
-                "minecraft_version": project.minecraft_version,
-                "loader_version": project.loader_version,
-                "modmenu_version": project.modmenu_version,
-                "yacl_version": project.yacl_version
-    }
-}
-
-tasks.withType(JavaCompile).configureEach {
-    it.options.release = 21
-}
-
-java {
-    // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
-    // if it is present.
-    // If you remove this line, sources will not be generated.
-    withSourcesJar()
-
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
-}
-
-jar {
-    from("LICENSE") {
-        rename { "${it}_${project.base.archivesName.get()}" }
-    }
-}
-
-// configure the maven publication
-publishing {
-    publications {
-        create("mavenJava", MavenPublication) {
-            artifactId = project.archives_base_name
-            from components.java
-        }
-    }
-
-    // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
-    repositories {
-        // Add repositories to publish to here.
-        // Notice: This block does NOT have the same function as the block in the top level.
-        // The repositories here will be used for publishing your artifact, not for
-        // retrieving dependencies.
-    }
+String prop(String key) {
+	return findProperty(key).toString()
 }
