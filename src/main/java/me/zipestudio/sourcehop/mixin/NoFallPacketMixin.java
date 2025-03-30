@@ -34,9 +34,10 @@ public abstract class NoFallPacketMixin {
             player.setVelocity(velocity.x, -2.999, velocity.z);
         }
 
+
         //? if >=1.21 {
         networkHandler.sendPacket(new PlayerMoveC2SPacket.OnGroundOnly(true, player.horizontalCollision));
-        //?} else {
+         //?} else {
         /*networkHandler.sendPacket(new PlayerMoveC2SPacket.OnGroundOnly(true));
         *///?}
 
